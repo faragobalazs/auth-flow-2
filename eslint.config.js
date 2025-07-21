@@ -18,6 +18,7 @@ export default [
     rules: {
       // Disallow CommonJS require() calls
       "no-undef": "error",
+      "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
 
       // Custom rules to catch CommonJS patterns
       "no-restricted-globals": [

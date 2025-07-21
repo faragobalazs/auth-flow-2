@@ -1,10 +1,11 @@
-const express = require("express");
-const cookieParser = require("cookie-parser");
-const cors = require("cors");
-require("dotenv").config({ path: "./config.env" });
+import express from "express";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import dotenv from "dotenv";
+import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/user.js";
 
-const authRoutes = require("./routes/auth");
-const userRoutes = require("./routes/user");
+dotenv.config({ path: "./config.env" });
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -37,7 +38,7 @@ app.get("/api/health", (req, res) => {
 });
 
 // Error handling middleware
-app.use((err, req, res, next) => {
+app.use((err, req, res, _next) => {
   console.error(err.stack);
   res.status(500).json({ error: "Something went wrong!" });
 });
