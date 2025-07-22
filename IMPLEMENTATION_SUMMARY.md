@@ -37,7 +37,7 @@ This project implements a complete backend authentication system using JWT token
 
 ```
 ├── server.js              # Main Express server
-├── config.env             # Environment variables
+├── .env                   # Environment variables
 ├── package.json           # Dependencies and scripts
 ├── middleware/
 │   └── auth.js           # JWT authentication middleware
@@ -146,7 +146,7 @@ The system has been thoroughly tested and verified to work correctly:
 
 2. **Configure Environment:**
 
-   - Edit `config.env` with your secrets
+   - Edit `.env` with your secrets
 
 3. **Start Server:**
 

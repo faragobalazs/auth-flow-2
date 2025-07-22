@@ -15,7 +15,7 @@ This is a complete backend authentication system that uses JWT tokens stored in 
 
 ```
 ├── server.js              # Main server file
-├── config.env             # Environment variables
+├── .env                   # Environment variables
 ├── package.json           # Dependencies
 ├── middleware/
 │   └── auth.js           # Authentication middleware
@@ -37,7 +37,7 @@ This is a complete backend authentication system that uses JWT tokens stored in 
 
 2. **Configure environment variables:**
 
-   - Edit `config.env` file
+   - Edit `.env` file
    - Change the JWT_SECRET and COOKIE_SECRET to secure values
 
 3. **Start the server:**

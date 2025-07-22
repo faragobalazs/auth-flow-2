@@ -74,7 +74,7 @@ This document outlines how to integrate a database with the authentication syste
 
 ## Environment Variables
 
-Add these to your `config.env`:
+Add these to your `.env`:
 
 ```env
 # MongoDB
