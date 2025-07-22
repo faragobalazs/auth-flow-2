@@ -17,6 +17,4 @@ const getUserProfile = (req, res) => {
   }
 };
 
-module.exports = {
-  getUserProfile,
-};
+export { getUserProfile };

@@ -1,5 +1,5 @@
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 
 // In-memory user storage (in production, use a database)
 const users = [];
@@ -57,7 +57,7 @@ const register = async (req, res) => {
       secure: process.env.NODE_ENV === "production", // HTTPS only in production
       signed: true,
       maxAge: 2 * 24 * 60 * 60 * 1000, // 2 days (longer than JWT expiration)
-      sameSite: "lax",
+      sameSite: "lax", // Changed from "strict" for testing
     });
 
     res.status(201).json({
@@ -113,7 +113,7 @@ const login = async (req, res) => {
       secure: process.env.NODE_ENV === "production", // HTTPS only in production
       signed: true,
       maxAge: 2 * 24 * 60 * 60 * 1000, // 2 days (longer than JWT expiration)
-      sameSite: "lax",
+      sameSite: "lax", // Changed from "strict" for testing
     });
 
     res.json({
@@ -136,7 +136,7 @@ const logout = (req, res) => {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       signed: true,
-      sameSite: "lax",
+      sameSite: "lax", // Changed from "strict" for testing
     });
 
     res.json({ message: "Logout successful" });
@@ -146,8 +146,4 @@ const logout = (req, res) => {
   }
 };
 
-module.exports = {
-  register,
-  login,
-  logout,
-};
+export { register, login, logout };
